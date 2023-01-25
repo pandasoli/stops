@@ -1,0 +1,10 @@
+Writing An Interpreter In Go:
+  shortcut: waiig
+  description: A nice book
+  when: Started to make the parser
+  stops:
+A Arte De Respirar:
+  shortcut: aadr
+  description: A awesome book
+  when: I was done
+  stops:
