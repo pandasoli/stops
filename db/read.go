@@ -9,22 +9,30 @@ import (
 )
 
 
-func read() {
-  yfile, err := ioutil.ReadFile("items.yaml")
+func Read() map[string]stop.Stop {
+  yfile, err := ioutil.ReadFile("db/stops.yml")
 
   if err != nil {
-    // create it with the future write function
+    Write([]stop.Stop {})
   }
 
   data := make(map[string] stop.Stop)
   err = yaml.Unmarshal(yfile, &data)
 
   if err != nil {
-    fmt.Println("The stops.yml file is unreadable :(");
+    fmt.Println(err)
+    return nil
+  }
+
+  return data
+}
+
+func Write(data []stop.Stop) {
+  res, err := yaml.Marshal(data)
+
+  if err != nil {
     return
   }
 
-  for k, v := range data {
-    fmt.Printf("%s: %s\n", k, v)
-  }
+  ioutil.WriteFile("db/stops.yml", res, 0)
 }
