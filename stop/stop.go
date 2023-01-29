@@ -1,21 +1,20 @@
 package stop
 
-
 type Stop struct {
-  title string
-  shortcut string
-  description string
-  when string
+  Title string
+  Shortcut string
+  Description string
+  When string
 
-  stops []*Stop
+  Stops []*Stop
 }
 
-func New(title string, shortcut string, description string, when string, stops []*Stop) Stop {
+func New(Title string, Shortcut string, Description string, When string, Stops []*Stop) Stop {
   return Stop {
-    title,
-    shortcut,
-    description,
-    when,
-    stops,
+    Title,
+    Shortcut,
+    Description,
+    When,
+    Stops,
   }
 }
